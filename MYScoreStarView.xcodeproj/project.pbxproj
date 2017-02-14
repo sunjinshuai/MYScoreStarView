@@ -1,0 +1,542 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4C670B131E533CC900281698 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C670B121E533CC900281698 /* main.m */; };
+		4C670B161E533CC900281698 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C670B151E533CC900281698 /* AppDelegate.m */; };
+		4C670B191E533CC900281698 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C670B181E533CC900281698 /* ViewController.m */; };
+		4C670B1C1E533CC900281698 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C670B1A1E533CC900281698 /* Main.storyboard */; };
+		4C670B1E1E533CC900281698 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C670B1D1E533CC900281698 /* Assets.xcassets */; };
+		4C670B211E533CC900281698 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C670B1F1E533CC900281698 /* LaunchScreen.storyboard */; };
+		4C670B2C1E533CC900281698 /* MYScoreStarViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C670B2B1E533CC900281698 /* MYScoreStarViewTests.m */; };
+		4C670B371E533CC900281698 /* MYScoreStarViewUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C670B361E533CC900281698 /* MYScoreStarViewUITests.m */; };
+		4C670B471E533CED00281698 /* MYScoreStarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C670B461E533CED00281698 /* MYScoreStarView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4C670B281E533CC900281698 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4C670B061E533CC900281698 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4C670B0D1E533CC900281698;
+			remoteInfo = MYScoreStarView;
+		};
+		4C670B331E533CC900281698 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4C670B061E533CC900281698 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4C670B0D1E533CC900281698;
+			remoteInfo = MYScoreStarView;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4C670B0E1E533CC900281698 /* MYScoreStarView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MYScoreStarView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C670B121E533CC900281698 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4C670B141E533CC900281698 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		4C670B151E533CC900281698 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		4C670B171E533CC900281698 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		4C670B181E533CC900281698 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		4C670B1B1E533CC900281698 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4C670B1D1E533CC900281698 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4C670B201E533CC900281698 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4C670B221E533CC900281698 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C670B271E533CC900281698 /* MYScoreStarViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MYScoreStarViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C670B2B1E533CC900281698 /* MYScoreStarViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MYScoreStarViewTests.m; sourceTree = "<group>"; };
+		4C670B2D1E533CC900281698 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C670B321E533CC900281698 /* MYScoreStarViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MYScoreStarViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C670B361E533CC900281698 /* MYScoreStarViewUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MYScoreStarViewUITests.m; sourceTree = "<group>"; };
+		4C670B381E533CC900281698 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C670B451E533CED00281698 /* MYScoreStarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYScoreStarView.h; sourceTree = "<group>"; };
+		4C670B461E533CED00281698 /* MYScoreStarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYScoreStarView.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4C670B0B1E533CC900281698 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C670B241E533CC900281698 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C670B2F1E533CC900281698 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4C670B051E533CC900281698 = {
+			isa = PBXGroup;
+			children = (
+				4C670B101E533CC900281698 /* MYScoreStarView */,
+				4C670B2A1E533CC900281698 /* MYScoreStarViewTests */,
+				4C670B351E533CC900281698 /* MYScoreStarViewUITests */,
+				4C670B0F1E533CC900281698 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4C670B0F1E533CC900281698 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4C670B0E1E533CC900281698 /* MYScoreStarView.app */,
+				4C670B271E533CC900281698 /* MYScoreStarViewTests.xctest */,
+				4C670B321E533CC900281698 /* MYScoreStarViewUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4C670B101E533CC900281698 /* MYScoreStarView */ = {
+			isa = PBXGroup;
+			children = (
+				4C670B441E533CD700281698 /* MYScoreStarView */,
+				4C670B141E533CC900281698 /* AppDelegate.h */,
+				4C670B151E533CC900281698 /* AppDelegate.m */,
+				4C670B171E533CC900281698 /* ViewController.h */,
+				4C670B181E533CC900281698 /* ViewController.m */,
+				4C670B1A1E533CC900281698 /* Main.storyboard */,
+				4C670B1D1E533CC900281698 /* Assets.xcassets */,
+				4C670B1F1E533CC900281698 /* LaunchScreen.storyboard */,
+				4C670B221E533CC900281698 /* Info.plist */,
+				4C670B111E533CC900281698 /* Supporting Files */,
+			);
+			path = MYScoreStarView;
+			sourceTree = "<group>";
+		};
+		4C670B111E533CC900281698 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4C670B121E533CC900281698 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4C670B2A1E533CC900281698 /* MYScoreStarViewTests */ = {
+			isa = PBXGroup;
+			children = (
+				4C670B2B1E533CC900281698 /* MYScoreStarViewTests.m */,
+				4C670B2D1E533CC900281698 /* Info.plist */,
+			);
+			path = MYScoreStarViewTests;
+			sourceTree = "<group>";
+		};
+		4C670B351E533CC900281698 /* MYScoreStarViewUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4C670B361E533CC900281698 /* MYScoreStarViewUITests.m */,
+				4C670B381E533CC900281698 /* Info.plist */,
+			);
+			path = MYScoreStarViewUITests;
+			sourceTree = "<group>";
+		};
+		4C670B441E533CD700281698 /* MYScoreStarView */ = {
+			isa = PBXGroup;
+			children = (
+				4C670B451E533CED00281698 /* MYScoreStarView.h */,
+				4C670B461E533CED00281698 /* MYScoreStarView.m */,
+			);
+			path = MYScoreStarView;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4C670B0D1E533CC900281698 /* MYScoreStarView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C670B3B1E533CC900281698 /* Build configuration list for PBXNativeTarget "MYScoreStarView" */;
+			buildPhases = (
+				4C670B0A1E533CC900281698 /* Sources */,
+				4C670B0B1E533CC900281698 /* Frameworks */,
+				4C670B0C1E533CC900281698 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MYScoreStarView;
+			productName = MYScoreStarView;
+			productReference = 4C670B0E1E533CC900281698 /* MYScoreStarView.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4C670B261E533CC900281698 /* MYScoreStarViewTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C670B3E1E533CC900281698 /* Build configuration list for PBXNativeTarget "MYScoreStarViewTests" */;
+			buildPhases = (
+				4C670B231E533CC900281698 /* Sources */,
+				4C670B241E533CC900281698 /* Frameworks */,
+				4C670B251E533CC900281698 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4C670B291E533CC900281698 /* PBXTargetDependency */,
+			);
+			name = MYScoreStarViewTests;
+			productName = MYScoreStarViewTests;
+			productReference = 4C670B271E533CC900281698 /* MYScoreStarViewTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4C670B311E533CC900281698 /* MYScoreStarViewUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C670B411E533CC900281698 /* Build configuration list for PBXNativeTarget "MYScoreStarViewUITests" */;
+			buildPhases = (
+				4C670B2E1E533CC900281698 /* Sources */,
+				4C670B2F1E533CC900281698 /* Frameworks */,
+				4C670B301E533CC900281698 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4C670B341E533CC900281698 /* PBXTargetDependency */,
+			);
+			name = MYScoreStarViewUITests;
+			productName = MYScoreStarViewUITests;
+			productReference = 4C670B321E533CC900281698 /* MYScoreStarViewUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4C670B061E533CC900281698 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = com.chinabidding;
+				TargetAttributes = {
+					4C670B0D1E533CC900281698 = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+					};
+					4C670B261E533CC900281698 = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 4C670B0D1E533CC900281698;
+					};
+					4C670B311E533CC900281698 = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 4C670B0D1E533CC900281698;
+					};
+				};
+			};
+			buildConfigurationList = 4C670B091E533CC900281698 /* Build configuration list for PBXProject "MYScoreStarView" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4C670B051E533CC900281698;
+			productRefGroup = 4C670B0F1E533CC900281698 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4C670B0D1E533CC900281698 /* MYScoreStarView */,
+				4C670B261E533CC900281698 /* MYScoreStarViewTests */,
+				4C670B311E533CC900281698 /* MYScoreStarViewUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4C670B0C1E533CC900281698 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C670B211E533CC900281698 /* LaunchScreen.storyboard in Resources */,
+				4C670B1E1E533CC900281698 /* Assets.xcassets in Resources */,
+				4C670B1C1E533CC900281698 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C670B251E533CC900281698 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C670B301E533CC900281698 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4C670B0A1E533CC900281698 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C670B191E533CC900281698 /* ViewController.m in Sources */,
+				4C670B161E533CC900281698 /* AppDelegate.m in Sources */,
+				4C670B131E533CC900281698 /* main.m in Sources */,
+				4C670B471E533CED00281698 /* MYScoreStarView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C670B231E533CC900281698 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C670B2C1E533CC900281698 /* MYScoreStarViewTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C670B2E1E533CC900281698 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C670B371E533CC900281698 /* MYScoreStarViewUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4C670B291E533CC900281698 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4C670B0D1E533CC900281698 /* MYScoreStarView */;
+			targetProxy = 4C670B281E533CC900281698 /* PBXContainerItemProxy */;
+		};
+		4C670B341E533CC900281698 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4C670B0D1E533CC900281698 /* MYScoreStarView */;
+			targetProxy = 4C670B331E533CC900281698 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4C670B1A1E533CC900281698 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4C670B1B1E533CC900281698 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4C670B1F1E533CC900281698 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4C670B201E533CC900281698 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4C670B391E533CC900281698 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		4C670B3A1E533CC900281698 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4C670B3C1E533CC900281698 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MYScoreStarView/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.chinabidding.MYScoreStarView;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		4C670B3D1E533CC900281698 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MYScoreStarView/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.chinabidding.MYScoreStarView;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		4C670B3F1E533CC900281698 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MYScoreStarViewTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.chinabidding.MYScoreStarViewTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MYScoreStarView.app/MYScoreStarView";
+			};
+			name = Debug;
+		};
+		4C670B401E533CC900281698 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MYScoreStarViewTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.chinabidding.MYScoreStarViewTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MYScoreStarView.app/MYScoreStarView";
+			};
+			name = Release;
+		};
+		4C670B421E533CC900281698 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = MYScoreStarViewUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.chinabidding.MYScoreStarViewUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = MYScoreStarView;
+			};
+			name = Debug;
+		};
+		4C670B431E533CC900281698 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = MYScoreStarViewUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.chinabidding.MYScoreStarViewUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = MYScoreStarView;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4C670B091E533CC900281698 /* Build configuration list for PBXProject "MYScoreStarView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C670B391E533CC900281698 /* Debug */,
+				4C670B3A1E533CC900281698 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4C670B3B1E533CC900281698 /* Build configuration list for PBXNativeTarget "MYScoreStarView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C670B3C1E533CC900281698 /* Debug */,
+				4C670B3D1E533CC900281698 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		4C670B3E1E533CC900281698 /* Build configuration list for PBXNativeTarget "MYScoreStarViewTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C670B3F1E533CC900281698 /* Debug */,
+				4C670B401E533CC900281698 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		4C670B411E533CC900281698 /* Build configuration list for PBXNativeTarget "MYScoreStarViewUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C670B421E533CC900281698 /* Debug */,
+				4C670B431E533CC900281698 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4C670B061E533CC900281698 /* Project object */;
+}
