@@ -2,6 +2,8 @@
 //  MYScoreStarView.m
 //  MYScoreStarView
 //
+//  Reference
+//  https://github.com/foxsofter/LPDControlsKit/tree/master/LPDControlsKit/Classes/LPDRating
 //  Created by Michael on 2017/2/14.
 //  Copyright © 2017年 com.chinabidding. All rights reserved.
 //
