@@ -1,12 +1,12 @@
-# MYKit
-效率工具类 &amp; 系统文件归类整理；
+# MYScoreStarView
+iOS 星星评分视图控件，点击和滑动评分。
 
-[![Build Status](https://travis-ci.org/sunjinshuai/MYKit.svg?branch=master)](https://travis-ci.org/sunjinshuai/MYKit/)
-[![Version](https://img.shields.io/cocoapods/v/MYKit.svg?style=flat)](http://cocoapods.org/pods/MYKit)
-[![License](https://img.shields.io/cocoapods/l/MYKit.svg?style=flat)](http://cocoapods.org/pods/MYKit)
-[![Platform](https://img.shields.io/cocoapods/p/MYKit.svg?style=flat)](http://cocoapods.org/pods/MYKit)
+[![Build Status](https://travis-ci.org/sunjinshuai/MYScoreStarView.svg?branch=master)](https://travis-ci.org/sunjinshuai/MYScoreStarView/)
+[![Version](https://img.shields.io/cocoapods/v/MYScoreStarView.svg?style=flat)](http://cocoapods.org/pods/MYScoreStarView)
+[![License](https://img.shields.io/cocoapods/l/MYScoreStarView.svg?style=flat)](http://cocoapods.org/pods/MYScoreStarView)
+[![Platform](https://img.shields.io/cocoapods/p/MYScoreStarView.svg?style=flat)](http://cocoapods.org/pods/MYScoreStarView)
 
-MYKit整理了平常项目中经常使用的分类，是不错的效率工具类 &amp; 系统文件归类整理，抽离出来先开源给大家。
+iOS 星星评分视图控件，点击和滑动评分。
 
 ## Usage
 
@@ -16,11 +16,11 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Installation
 
-MYKit is available through [CocoaPods](http://cocoapods.org). To install
+MYScoreStarView is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'MYKit', '~> 1.0.6'
+pod 'MYScoreStarView', '~> 0.0.1'
 ```
 
 ## Author
@@ -29,4 +29,4 @@ sunjinshuai, s_mike@163.com
 
 ## License
 
-MYKit is available under the MIT license. See the LICENSE file for more info.
+MYScoreStarView is available under the MIT license. See the LICENSE file for more info.
