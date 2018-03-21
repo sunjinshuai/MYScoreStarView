@@ -6,8 +6,6 @@ iOS 星星评分视图控件，点击和滑动评分。
 [![License](https://img.shields.io/cocoapods/l/MYScoreStarView.svg?style=flat)](http://cocoapods.org/pods/MYScoreStarView)
 [![Platform](https://img.shields.io/cocoapods/p/MYScoreStarView.svg?style=flat)](http://cocoapods.org/pods/MYScoreStarView)
 
-iOS 星星评分视图控件，点击和滑动评分。
-
 ## Usage
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
