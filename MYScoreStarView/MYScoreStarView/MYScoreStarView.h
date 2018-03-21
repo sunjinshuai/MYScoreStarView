@@ -8,24 +8,22 @@
 
 #import <UIKit/UIKit.h>
 
-@class MYScoreStarView;
+typedef NS_ENUM(NSUInteger, MYScoreStarStyle) {
+    MYScoreStarStyleDefault,   // 只能出现整个星型被选中
+    MYScoreStarStyleHalf,      // 只能出现半个星型
+    MYScoreStarStylePrecision, // 可以出现精确值
+};
 
-@protocol MYScoreStarViewDelegate <NSObject>
+@interface MYScoreStarView : UIControl
 
-@optional
+@property (nonatomic) NSUInteger maxValue;
+@property (nonatomic) CGFloat minValue;
+@property (nonatomic) CGFloat value;
+@property (nonatomic) CGFloat spacing;
+@property (nonatomic) MYScoreStarStyle starStyle;
 
-- (void)starsScore:(MYScoreStarView *)starsScore valueChange:(CGFloat)value;
-
-@end
-
-@interface MYScoreStarView : UIView
-
-- (instancetype)initWithFrame:(CGRect)frame numberOfStars:(NSInteger)numberOfStars;
-
-@property (nonatomic, assign) CGFloat scorePercent;//得分值，范围为0--1，默认为1
-@property (nonatomic, assign) BOOL hasAnimation;//是否允许动画，默认为NO
-@property (nonatomic, assign) BOOL allowIncompleteStar;//评分时是否允许不是整星，默认为NO
-
-@property (nonatomic, weak) id<MYScoreStarViewDelegate> delegate;
+@property (nonatomic, strong) UIColor *selectedColor;
+@property (nonatomic, strong) UIColor *unselectedColor;
+@property (nonatomic, strong) UIColor *borderColor;
 
 @end

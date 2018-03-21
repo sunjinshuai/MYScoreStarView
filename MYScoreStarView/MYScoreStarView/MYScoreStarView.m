@@ -11,101 +11,300 @@
 #define ANIMATION_TIME_INTERVAL 0.2
 #define DEFALUT_STAR_NUMBER 5
 
-@interface MYScoreStarView ()
-
-@property (nonatomic, strong) UIView *foregroundStarView;
-@property (nonatomic, strong) UIView *backgroundStarView;
-@property (nonatomic, assign) NSInteger numberOfStars;
+@interface MYScoreStarView () {
+    CGFloat _minValue;
+    NSUInteger _maxValue;
+    CGFloat _value;
+}
 
 @end
 
 @implementation MYScoreStarView
 
-- (instancetype)initWithFrame:(CGRect)frame {
-    return [self initWithFrame:frame numberOfStars:DEFALUT_STAR_NUMBER];
-}
+@dynamic minValue;
+@dynamic maxValue;
+@dynamic value;
 
-- (instancetype)initWithFrame:(CGRect)frame numberOfStars:(NSInteger)numberOfStars {
-    if (self = [super initWithFrame:frame]) {
-        _numberOfStars = numberOfStars;
-        [self buildDataAndUI];
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        [self initialize];
     }
     return self;
 }
 
-#pragma mark - Private Methods
-- (void)buildDataAndUI {
-    _scorePercent = 5;//默认为1
-    _hasAnimation = NO;//默认为NO
-    _allowIncompleteStar = NO;//默认为NO
-    
-    self.foregroundStarView = [self createStarViewWithImage:@"product_star"];
-    self.backgroundStarView = [self createStarViewWithImage:@"product_star_empty"];
-    
-    [self addSubview:self.backgroundStarView];
-    [self addSubview:self.foregroundStarView];
-    
-    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(userTapRateView:)];
-    tapGesture.numberOfTapsRequired = 1;
-    [self addGestureRecognizer:tapGesture];
+- (instancetype)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    if (self) {
+        [self initialize];
+    }
+    return self;
 }
 
-- (void)userTapRateView:(UITapGestureRecognizer *)gesture {
-    CGPoint tapPoint = [gesture locationInView:self];
-    CGFloat offset = tapPoint.x;
-    CGFloat realStarScore = offset / (self.bounds.size.width / self.numberOfStars);
-    CGFloat starScore = self.allowIncompleteStar ? realStarScore : ceilf(realStarScore);
-    NSInteger tmpScore = (starScore / self.numberOfStars) * 5;
-    
-    NSInteger score = (starScore / self.numberOfStars) * 5 > tmpScore ? tmpScore + 1 : tmpScore;
-    
-    self.scorePercent = (CGFloat)score;;
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        [self initialize];
+    }
+    return self;
 }
 
-- (UIView *)createStarViewWithImage:(NSString *)imageName {
-    UIView *view = [[UIView alloc] initWithFrame:self.bounds];
-    view.clipsToBounds = YES;
-    view.backgroundColor = [UIColor clearColor];
-    for (NSInteger i = 0; i < self.numberOfStars; i ++)
+- (void)initialize {
+    self.exclusiveTouch = YES;
+    _minValue = 0.f;
+    _maxValue = 5;
+    _value = 0.f;
+    _spacing = 5.f;
+    _starStyle = MYScoreStarStyleDefault;
+}
+
+#pragma mark - Properties
+
+- (UIColor *)backgroundColor {
+    if ([super backgroundColor]) {
+        return [super backgroundColor];
+    } else {
+        return self.isOpaque ? [UIColor whiteColor] : [UIColor clearColor];
+    };
+}
+
+- (CGFloat)minValue {
+    return MAX(_minValue, 0);
+}
+
+- (void)setMinValue:(CGFloat)minValue {
+    if (_minValue != minValue) {
+        _minValue = minValue;
+        [self setNeedsDisplay];
+    }
+}
+
+- (NSUInteger)maxValue {
+    return MAX(_minValue, _maxValue);
+}
+
+- (void)setMaxValue:(NSUInteger)maxValue {
+    if (_maxValue != maxValue) {
+        _maxValue = maxValue;
+        [self setNeedsDisplay];
+        [self invalidateIntrinsicContentSize];
+    }
+}
+
+- (CGFloat)value {
+    return MIN(MAX(_value, _minValue), _maxValue);
+}
+
+- (void)setValue:(CGFloat)value {
+    [self setValue:value sendValueChangedAction:NO];
+}
+
+- (void)setValue:(CGFloat)value sendValueChangedAction:(BOOL)sendAction {
+    if (_value != value && value >= _minValue && value <= _maxValue) {
+        _value = value;
+        if (sendAction)
+            [self sendActionsForControlEvents:UIControlEventValueChanged];
+        [self setNeedsDisplay];
+    }
+}
+
+- (void)setSpacing:(CGFloat)spacing {
+    _spacing = MAX(spacing, 0);
+    [self setNeedsDisplay];
+}
+
+#pragma mark - Drawing
+
+- (void)drawPrecisionStarShapeWithFrame:(CGRect)frame
+                              tintColor:(UIColor *)tintColor
+                            highlighted:(BOOL)highlighted {
+    [self drawPrecisionStarShapeWithFrame:frame tintColor:tintColor progress:highlighted ? 1.f : 0.f];
+}
+
+- (void)drawHalfStarShapeWithFrame:(CGRect)frame tintColor:(UIColor *)tintColor {
+    [self drawPrecisionStarShapeWithFrame:frame tintColor:tintColor progress:.5f];
+}
+
+- (void)drawPrecisionStarShapeWithFrame:(CGRect)frame
+                              tintColor:(UIColor *)tintColor
+                               progress:(CGFloat)progress {
+    UIBezierPath *starShapePath = UIBezierPath.bezierPath;
+    [starShapePath moveToPoint:CGPointMake(CGRectGetMinX(frame) + 0.62723 * CGRectGetWidth(frame),
+                                           CGRectGetMinY(frame) + 0.37309 * CGRectGetHeight(frame))];
+    [starShapePath addLineToPoint:CGPointMake(CGRectGetMinX(frame) + 0.50000 * CGRectGetWidth(frame),
+                                              CGRectGetMinY(frame) + 0.02500 * CGRectGetHeight(frame))];
+    [starShapePath addLineToPoint:CGPointMake(CGRectGetMinX(frame) + 0.37292 * CGRectGetWidth(frame),
+                                              CGRectGetMinY(frame) + 0.37309 * CGRectGetHeight(frame))];
+    [starShapePath addLineToPoint:CGPointMake(CGRectGetMinX(frame) + 0.02500 * CGRectGetWidth(frame),
+                                              CGRectGetMinY(frame) + 0.39112 * CGRectGetHeight(frame))];
+    [starShapePath addLineToPoint:CGPointMake(CGRectGetMinX(frame) + 0.30504 * CGRectGetWidth(frame),
+                                              CGRectGetMinY(frame) + 0.62908 * CGRectGetHeight(frame))];
+    [starShapePath addLineToPoint:CGPointMake(CGRectGetMinX(frame) + 0.20642 * CGRectGetWidth(frame),
+                                              CGRectGetMinY(frame) + 0.97500 * CGRectGetHeight(frame))];
+    [starShapePath addLineToPoint:CGPointMake(CGRectGetMinX(frame) + 0.50000 * CGRectGetWidth(frame),
+                                              CGRectGetMinY(frame) + 0.78265 * CGRectGetHeight(frame))];
+    [starShapePath addLineToPoint:CGPointMake(CGRectGetMinX(frame) + 0.79358 * CGRectGetWidth(frame),
+                                              CGRectGetMinY(frame) + 0.97500 * CGRectGetHeight(frame))];
+    [starShapePath addLineToPoint:CGPointMake(CGRectGetMinX(frame) + 0.69501 * CGRectGetWidth(frame),
+                                              CGRectGetMinY(frame) + 0.62908 * CGRectGetHeight(frame))];
+    [starShapePath addLineToPoint:CGPointMake(CGRectGetMinX(frame) + 0.97500 * CGRectGetWidth(frame),
+                                              CGRectGetMinY(frame) + 0.39112 * CGRectGetHeight(frame))];
+    [starShapePath addLineToPoint:CGPointMake(CGRectGetMinX(frame) + 0.62723 * CGRectGetWidth(frame),
+                                              CGRectGetMinY(frame) + 0.37309 * CGRectGetHeight(frame))];
+    [starShapePath closePath];
+    starShapePath.miterLimit = 4;
+    
+    CGFloat frameWidth = frame.size.width;
+    
+    CGRect rightRectOfStar = CGRectMake(frame.origin.x + progress * frameWidth, frame.origin.y,
+                                        frameWidth - progress * frameWidth, frame.size.height);
+    UIBezierPath *rightClipPath = [UIBezierPath bezierPathWithRect:CGRectInfinite];
+    [rightClipPath appendPath:[UIBezierPath bezierPathWithRect:rightRectOfStar]];
+    rightClipPath.usesEvenOddFillRule = YES;
+    
+    [_unselectedColor setFill];
+    [starShapePath fill];
+    
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSaveGState(context);
     {
-        UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:imageName]];
-        imageView.frame = CGRectMake(i * self.bounds.size.width / self.numberOfStars, 0, self.bounds.size.width / self.numberOfStars, self.bounds.size.height);
-        imageView.contentMode = UIViewContentModeScaleAspectFit;
-        [view addSubview:imageView];
+        [rightClipPath addClip];
+        [_selectedColor setFill];
+        [starShapePath fill];
     }
-    return view;
+    CGContextRestoreGState(context);
+    starShapePath.lineWidth = 1;
+    [_borderColor setStroke];
+    [starShapePath stroke];
 }
 
-- (void)layoutSubviews {
-    [super layoutSubviews];
-    [self animationTheShow];
+- (void)drawRect:(CGRect)rect {
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(context, self.backgroundColor.CGColor);
+    CGContextFillRect(context, rect);
+    
+    CGFloat availableWidth = rect.size.width - (_spacing * (_maxValue - 1));
+    CGFloat cellWidth = (availableWidth / _maxValue);
+    CGFloat starSide = (cellWidth <= rect.size.height) ? cellWidth : rect.size.height;
+    for (int idx = 0; idx < _maxValue; idx++) {
+        CGPoint center = CGPointMake(cellWidth * idx + cellWidth / 2 + _spacing * idx, rect.size.height / 2);
+        CGRect frame = CGRectMake(center.x - starSide / 2, center.y - starSide / 2, starSide, starSide);
+        BOOL highlighted = (idx + 1 <= ceilf(_value));
+        if (highlighted && (idx + 1 > _value)) {
+            if (_starStyle == MYScoreStarStylePrecision) {
+                [self drawPrecisionStarShapeWithFrame:frame tintColor:self.tintColor progress:_value - idx];
+            } else {
+                [self drawHalfStarShapeWithFrame:frame tintColor:self.tintColor];
+            }
+        } else {
+            [self drawPrecisionStarShapeWithFrame:frame tintColor:self.tintColor highlighted:highlighted];
+        }
+    }
 }
 
-- (void)animationTheShow
-{
-    __weak MYScoreStarView *weakSelf = self;
-    CGFloat animationTimeInterval = self.hasAnimation ? ANIMATION_TIME_INTERVAL : 0;
-    [UIView animateWithDuration:animationTimeInterval animations:^{
-        weakSelf.foregroundStarView.frame = CGRectMake(0, 0, weakSelf.bounds.size.width * (weakSelf.scorePercent / 5), weakSelf.bounds.size.height);
-    }];
+#pragma mark - Touches
+
+- (BOOL)beginTrackingWithTouch:(UITouch *)touch withEvent:(UIEvent *)event {
+    [super beginTrackingWithTouch:touch withEvent:event];
+    if (![self isFirstResponder]) {
+        [self becomeFirstResponder];
+    }
+    [self handleTouch:touch];
+    return YES;
 }
 
-- (void)setScorePercent:(CGFloat)scroePercent {
-    if (_scorePercent == scroePercent) {
-        return;
+- (BOOL)continueTrackingWithTouch:(UITouch *)touch withEvent:(UIEvent *)event {
+    [super continueTrackingWithTouch:touch withEvent:event];
+    [self handleTouch:touch];
+    return YES;
+}
+
+- (void)endTrackingWithTouch:(UITouch *)touch withEvent:(UIEvent *)event {
+    [super endTrackingWithTouch:touch withEvent:event];
+    if ([self isFirstResponder]) {
+        [self resignFirstResponder];
+    }
+    [self handleTouch:touch];
+}
+
+- (void)cancelTrackingWithEvent:(UIEvent *)event {
+    [super cancelTrackingWithEvent:event];
+    if ([self isFirstResponder]) {
+        [self resignFirstResponder];
+    }
+}
+
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
+    if ([gestureRecognizer.view isEqual:self]) {
+        return !self.isUserInteractionEnabled;
+    }
+    return YES;
+}
+
+- (void)handleTouch:(UITouch *)touch {
+    CGFloat cellWidth = self.bounds.size.width / _maxValue;
+    CGPoint location = [touch locationInView:self];
+    CGFloat value = location.x / cellWidth;
+    switch (_starStyle) {
+        case MYScoreStarStyleDefault:
+            value = ceilf(value);
+            break;
+        case MYScoreStarStyleHalf:
+            if (value + .5f < ceilf(value)) {
+                value = floor(value) + .5f;
+            } else {
+                value = ceilf(value);
+            }
+            break;
+        case MYScoreStarStylePrecision:
+            value = value;
+            break;
     }
     
-    _scorePercent = scroePercent;
-    
-    _scorePercent = (_scorePercent <= 1) ? 1 : _scorePercent;
-    _scorePercent = (_scorePercent >= 5) ? 5 : _scorePercent;
-    
-    
-    if ([self.delegate respondsToSelector:@selector(starsScore:valueChange:)]) {
-        [self.delegate starsScore:self valueChange:_scorePercent];
-    }
-    
-    [self setNeedsLayout];
+    [self setValue:value sendValueChangedAction:YES];
+}
+
+#pragma mark - First responder
+
+- (BOOL)canBecomeFirstResponder {
+    return YES;
+}
+
+#pragma mark - Intrinsic Content Size
+
+- (CGSize)intrinsicContentSize {
+    CGFloat height = 44.f;
+    return CGSizeMake(_maxValue * height + (_maxValue - 1) * _spacing, height);
+}
+
+#pragma mark - Accessibility
+
+- (BOOL)isAccessibilityElement {
+    return YES;
+}
+
+- (NSString *)accessibilityLabel {
+    return [super accessibilityLabel] ?: NSLocalizedString(@"Rating", @"Accessibility label for star rating control.");
+}
+
+- (UIAccessibilityTraits)accessibilityTraits {
+    return ([super accessibilityTraits] | UIAccessibilityTraitAdjustable);
+}
+
+- (NSString *)accessibilityValue {
+    return [@(self.value) description];
+}
+
+- (BOOL)accessibilityActivate {
+    return YES;
+}
+
+- (void)accessibilityIncrement {
+    self.value += _starStyle == MYScoreStarStyleHalf ? .5f : 1.f;
+}
+
+- (void)accessibilityDecrement {
+    self.value -= _starStyle == MYScoreStarStyleHalf ? .5f : 1.f;
 }
 
 @end
